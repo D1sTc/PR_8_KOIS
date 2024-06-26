@@ -1,0 +1,85 @@
+﻿<Window x:Class="PR_8._1.MainMenu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR_8._1"
+        mc:Ignorable="d"
+        Title="Панель управление (для администратора) (для директора)" Height="500" Width="800" ResizeMode="NoResize">
+    <Grid x:Name="___Без_имени_">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FF3F7084"/>
+                <GradientStop Color="#FF3E0B0B" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="30,23,360,30" Background="#FFA09898">
+            <Border BorderBrush="Black" BorderThickness="1" Margin="9,39,9,9" Background="White">
+                <ScrollViewer/>
+            </Border>
+        </Border>
+        <Label Content="Список пользователей (уч. записей)" HorizontalAlignment="Left" Margin="60,23,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Сортировка по ролям" HorizontalAlignment="Left" Margin="525,31,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <Label Content="Добавить роль" HorizontalAlignment="Left" Margin="558,128,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="roleViewPanel" HorizontalAlignment="Left" Margin="531,73,0,0" VerticalAlignment="Top" Width="201" FontSize="16">
+            <!-- можно будет добавить данным пользователям по сортировке окраску цвета. -->
+            <TextBlock><Run Text="Новый пользователь"/></TextBlock>
+            <TextBlock><Run Text="Заказчик"/></TextBlock>
+            <TextBlock><Run Text="Звукоинженер"/></TextBlock>
+            <TextBlock><Run Text="Звукорежесёр"/></TextBlock>
+            <TextBlock><Run Text="Бухгалтер"/></TextBlock>
+            <TextBlock><Run Text="Администратор"/></TextBlock>
+            <TextBlock><Run Text="Директор"/></TextBlock>
+        </ComboBox>
+        <ComboBox x:Name="roleAddPanel" HorizontalAlignment="Left" Margin="531,170,0,0" VerticalAlignment="Top" Width="201" FontSize="16">
+            <TextBlock><Run Text="Новый пользователь"/></TextBlock>
+            <TextBlock><Run Text="Заказчик"/></TextBlock>
+            <TextBlock><Run Text="Звукоинженер"/></TextBlock>
+            <TextBlock><Run Text="Звукорежесёр"/></TextBlock>
+            <TextBlock><Run Text="Бухгалтер"/></TextBlock>
+            <TextBlock><Run Text="Администратор"/></TextBlock>
+            <!-- У администратора данной роли на добавление быть не должно -->
+            <TextBlock><Run Text="Директор"/></TextBlock>
+            <!-- У администратора данной роли на добавление быть не должно -->
+        </ComboBox>
+        <Label Content="Удалить роль" HorizontalAlignment="Left" Margin="565,239,0,0" VerticalAlignment="Top" FontSize="20"/>
+        <ComboBox x:Name="roleAddPanel_Копировать" HorizontalAlignment="Left" Margin="531,281,0,0" VerticalAlignment="Top" Width="201" FontSize="16">
+            <TextBlock><Run Text="Новый пользователь"/></TextBlock>
+            <TextBlock><Run Text="Заказчик"/></TextBlock>
+            <TextBlock><Run Text="Звукоинженер"/></TextBlock>
+            <TextBlock><Run Text="Звукорежесёр"/></TextBlock>
+            <TextBlock><Run Text="Бухгалтер"/></TextBlock>
+            <TextBlock><Run Text="Администратор"/></TextBlock>
+            <!-- У администратора данной роли на удаление быть не должно || вариант решения: добавить подобную же форму без данной роли по БД для администратора  -->
+            <TextBlock><Run Text="Директор"/></TextBlock>
+            <!-- У администратора данной роли на удаление быть не должно || вариант решения: добавить подобную же форму без данной роли по БД для администратора -->
+        </ComboBox>
+        <Button x:Name="cancelingLastAction" Content="Отменить последнее действие" HorizontalAlignment="Left" Margin="577,339,0,0" VerticalAlignment="Top" Height="37" Width="179" Click="cancelingLastAction_Click">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="exitButton" Content="Выйти 🚪" RenderTransformOrigin="0.292,-0.026" FontSize="16" Click="Exit_Click" Margin="683,409,10,10">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF87C4E4"/>
+                    <GradientStop Color="#FF521A1A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="saveRoleButton" Content="Сохранить" HorizontalAlignment="Left" Margin="491,339,0,0" VerticalAlignment="Top" Height="37" Width="81" Click="saveRoleButton_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+    </Grid>
+</Window>

@@ -1,0 +1,78 @@
+﻿<Window x:Class="PR_8._1.SoundEngineeringAndSoundEngineeringPanel"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PR_8._1"
+        mc:Ignorable="d"
+        Title="Панель редактирования (для звукорежиссёра) (для звукоинженера)" Height="500" Width="800" ResizeMode="NoResize">
+    <Grid>
+        <DockPanel>
+            <DockPanel.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF7F4949"/>
+                    <GradientStop Color="#FF7EA3E0" Offset="1"/>
+                </LinearGradientBrush>
+            </DockPanel.Background>
+            <Menu Height="25" VerticalAlignment="Top">
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="White" Offset="0.222"/>
+                        <GradientStop Color="#FF904848" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
+                <!--Создание меню-->
+                <MenuItem Header="Фaйл">
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Удалить"/>
+                    <MenuItem Header="Экспортировать"/>
+                </MenuItem>
+                <MenuItem Header="Эффект">
+                    <MenuItem Header="Добавить"/>
+                    <MenuItem Header="Удалить"/>
+                </MenuItem>
+                <MenuItem Header="Справка"/>
+            </Menu>
+        </DockPanel>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,213" Background="#FF126C8A" HorizontalAlignment="Center" Width="690" Height="160" VerticalAlignment="Bottom"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,242" Background="#FF797639" HorizontalAlignment="Center" Width="656" Height="51" VerticalAlignment="Bottom"/>
+        <Image HorizontalAlignment="Center" Margin="0,0,0,220" Width="110" Source="/SoundBar.png" Height="94" VerticalAlignment="Bottom"/>
+        <Border BorderBrush="Black" BorderThickness="1" Margin="0,0,0,298" Background="#FF5C9045" HorizontalAlignment="Center" Width="656" Height="42" VerticalAlignment="Bottom"/>
+        <Image Margin="0,0,362,281" Source="/SoundBar.png" HorizontalAlignment="Right" Width="110" Height="75" VerticalAlignment="Bottom"/>
+        <Button x:Name="addFile" Content="Добавить аудиофайл" Margin="72,283,0,0" Background="#FF87C4E4" Click="addFile_Click" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="addEffect" Content="Добавить аудиоэффект" Margin="212,283,0,0" Background="#FF87C4E4" Click="addEffect_Click" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="135">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="exportFile" Content="Экспортировать" Margin="621,283,0,0" Background="#FF87C4E4" Click="exportFile_Click" Height="35" VerticalAlignment="Top" HorizontalAlignment="Left" Width="107">
+            <Button.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+        <Button x:Name="exitButton" Content="Выйти 🚪" RenderTransformOrigin="0.292,-0.026" FontSize="16" Click="Exit_Click" Margin="682,406,10,10">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Button.Resources>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF87C4E4"/>
+                    <GradientStop Color="#FF521A1A" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>
